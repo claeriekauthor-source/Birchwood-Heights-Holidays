@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birchwood Heights - Cozy Holiday Romance Series by Claerie Kavanaugh</title>
+    <meta name="description" content="Fall in love this holiday season in Birchwood Heights - a trilogy of cozy sapphic holiday romances featuring pumpkins, turkey, and twinkle lights.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --autumn-orange: #D2691E;
+            --cinnamon: #8B4513;
+            --cream: #F5F5DC;
+            --warm-gold: #FFD700;
+            --cranberry: #DC143C;
+            --forest-green: #228B22;
+            --burnt-orange: #CC5500;
+            --warm-brown: #8B4726;
+            --soft-white: #FFF8DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--warm-brown);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-white) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 248, 220, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(139, 71, 38, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cinnamon);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--warm-brown);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cranberry);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--cinnamon);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--burnt-orange) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="60" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="20" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: var(--cranberry);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #B71C1C;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+        }
+
+        /* Book Carousel */
+        .book-carousel {
+            padding: 4rem 0;
+            background: var(--soft-white);
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem;
+        }
+
+        .book-cover {
+            width: 300px;
+            height: 450px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .book-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--cinnamon);
+            margin-bottom: 1rem;
+        }
+
+        .book-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--autumn-orange);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            opacity: 1;
+        }
+
+        /* Series Overview */
+        .series-overview {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-gold) 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--cinnamon);
+            margin-bottom: 3rem;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .book-card img {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .book-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--cinnamon);
+            margin-bottom: 1rem;
+        }
+
+        .book-card p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* Characters Section */
+        .characters {
+            padding: 4rem 0;
+            background: var(--soft-white);
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .character-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--autumn-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .character-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--cinnamon);
+            margin-bottom: 0.5rem;
+        }
+
+        .character-tagline {
+            font-style: italic;
+            color: var(--cranberry);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .character-quote {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--autumn-orange);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--cranberry) 0%, #8B0000 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: var(--warm-gold);
+            color: var(--warm-brown);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #DAA520;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--warm-brown);
+            color: var(--cream);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: var(--cream);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--warm-gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background: var(--autumn-orange);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--cranberry);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .carousel-slide {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .book-cover {
+                width: 250px;
+                height: 375px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Seasonal Decorations */
+        .seasonal-decoration {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .pumpkin {
+            font-size: 2rem;
+            color: var(--autumn-orange);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .leaf {
+            font-size: 1.5rem;
+            color: var(--burnt-orange);
+            animation: fall 8s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Seasonal Decorations -->
+    <div class="seasonal-decoration pumpkin" style="top: 20%; left: 5%;">🎃</div>
+    <div class="seasonal-decoration leaf" style="top: 10%; right: 10%;">🍂</div>
+    <div class="seasonal-decoration pumpkin" style="bottom: 30%; right: 5%;">🎃</div>
+    <div class="seasonal-decoration leaf" style="bottom: 20%; left: 8%;">🍁</div>
+
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">Birchwood Heights</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Fall in Love This Holiday Season</h1>
+                    <p>Three cozy sapphic romances. Three chances at forever. Welcome to Birchwood Heights, where pumpkins, turkey, and twinkle lights lead to happily ever after.</p>
+                    <a href="#books" class="cta-button">Start Reading</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Carousel -->
+        <section class="book-carousel">
+            <div class="container">
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="carousel">
+                        <div class="carousel-slide">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDMwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjRDI2OTFFIiByeD0iMTUiLz4KPHN2ZyB4PSI1MCIgeT0iNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMzUwIj4KPHN2ZyB4PSI1MCIgeT0iMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzhCNDUxMyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBmaWxsPSIjRkZENzAwIi8+Cjx0ZXh0IHg9IjUwIiB5PSI2MCIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOEI0NTEzIj7wn46DPC90ZXh0Pgo8L3N2Zz4KPHR5cGUgeD0iMjAiIHk9IjMwMCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgZm9udC13ZWlnaHQ9IjcwMCI+UHVtcGtpbiBTcGljZTwvdHlwZT4KPHR5cGUgeD0iMjAiIHk9IjMzMCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSJ3aGl0ZSI+QW5kIEV2ZXJ5dGhpbmcgTmljZTwvdHlwZT4KPHR5cGUgeD0iMjAiIHk9IjM2MCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSJ3aGl0ZSI+KEFib3V0IEhlcik8L3R5cGU+CjwvdGV4dD4KPC9zdmc+Cjwvc3ZnPgo=" alt="Pumpkin Spice and Everything Nice About Her" class="book-cover">
+                            <div class="book-info">
+                                <h3>Pumpkin Spice and Everything Nice About Her</h3>
+                                <p>When art teacher Lyndi Bailey's custody of her nephew is threatened, she needs the Pumpkin Palooza festival to succeed. Enter gruff mechanic Oakley Meadows, who volunteers as co-chair and turns Lyndi's world upside down.</p>
+                                <a href="#" class="cta-button">Read More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDMwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjQ0M1NTAwIiByeD0iMTUiLz4KPHN2ZyB4PSI1MCIgeT0iNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMzUwIj4KPHN2ZyB4PSI1MCIgeT0iMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzhCNDUxMyI+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjRkZENzAwIiByeD0iNSIvPgo8dGV4dCB4PSI1MCIgeT0iNjAiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC1zaXplPSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzhCNDUxMyI+8J+SnDwvdGV4dD4KPC9zdmc+Cjx0ZXh0IHg9IjIwIiB5PSIzMDAiIGZvbnQtZmFtaWx5PSJQbGF5ZmFpciBEaXNwbGF5LCBzZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkZha2UgRGF0ZXM8L3RleHQ+Cjx0ZXh0IHg9IjIwIiB5PSIzMzAiIGZvbnQtZmFtaWx5PSJQbGF5ZmFpciBEaXNwbGF5LCBzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiPkFuZCBQYXN0IE1pc3Rha2VzPC90ZXh0Pgo8L3N2Zz4KPC9zdmc+" alt="Fake Dates and Past Mistakes" class="book-cover">
+                            <div class="book-info">
+                                <h3>Fake Dates and Past Mistakes</h3>
+                                <p>When Lindsay Hunter's family discovers she's alive after 12 years, she needs a girlfriend for Thanksgiving dinner. Volunteer Devyn Prescott agrees to fake it, but their hearts have other plans.</p>
+                                <a href="#" class="cta-button">Read More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDMwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjMjI4QjIyIiByeD0iMTUiLz4KPHN2ZyB4PSI1MCIgeT0iNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMzUwIj4KPHN2ZyB4PSI1MCIgeT0iMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzhCNDUxMyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBmaWxsPSIjRkZENzAwIi8+Cjx0ZXh0IHg9IjUwIiB5PSI2MCIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOEI0NTEzIj7wn5GPPC90ZXh0Pgo8L3N2Zz4KPHR5cGUgeD0iMjAiIHk9IjMwMCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgZm9udC13ZWlnaHQ9IjcwMCI+U2lsdmVyIEJlbGxzPC90ZXh0Pgo8dGV4dCB4PSIyMCIgeT0iMzMwIiBmb250LWZhbWlseT0iUGxheWZhaXIgRGlzcGxheSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5BbmQgQ2hyaXN0bWFzIFNwZWxsczwvdGV4dD4KPC9zdmc+Cjwvc3ZnPgo=" alt="Silver Bells and Christmas Spells" class="book-cover">
+                            <div class="book-info">
+                                <h3>Silver Bells and Christmas Spells</h3>
+                                <p>PTA queen Annie Ames has her Christmas pageant perfectly planned until chaotic kindergarten teacher Emberlynn Walters turns her orderly world into beautiful mayhem.</p>
+                                <a href="#" class="cta-button">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-nav">
+                        <div class="carousel-dot active" data-slide="0"></div>
+                        <div class="carousel-dot" data-slide="1"></div>
+                        <div class="carousel-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Series Overview -->
+        <section id="books" class="series-overview">
+            <div class="container">
+                <h2 class="section-title">Three Seasons. Three Chances at Love.</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Pumpkins, turkey, and twinkle lights — romance all season long.</p>
+                
+                <div class="books-grid">
+                    <div class="book-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRDI2OTFFIiByeD0iMTAiLz4KPHR5cGUgeD0iMTAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgZm9udC13ZWlnaHQ9IjcwMCI+UHVtcGtpbiBTcGljZTwvdGV4dD4KPC9zdmc+" alt="Pumpkin Spice Book Cover">
+                        <h3>October: Fall Festival</h3>
+                        <p>Art teacher Lyndi and gruff mechanic Oakley find love while planning the perfect autumn celebration and fighting for family.</p>
+                        <a href="#" class="cta-button">Buy Now</a>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjQ0M1NTAwIiByeD0iMTAiLz4KPHR5cGUgeD0iMTAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgZm9udC13ZWlnaHQ9IjcwMCI+RmFrZSBEYXRlczwvdGV4dD4KPC9zdmc+" alt="Fake Dates Book Cover">
+                        <h3>November: Thanksgiving</h3>
+                        <p>Shelter mom Lindsay and volunteer Devyn pretend to be dating for family dinner, but fake feelings become beautifully real.</p>
+                        <a href="#" class="cta-button">Pre-Order</a>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMjI4QjIyIiByeD0iMTAiLz4KPHR5cGUgeD0iMTAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IlBsYXlmYWlyIERpc3BsYXksIHNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgZm9udC13ZWlnaHQ9IjcwMCI+U2lsdmVyIEJlbGxzPC90ZXh0Pgo8L3N2Zz4=" alt="Silver Bells Book Cover">
+                        <h3>December: Christmas Pageant</h3>
+                        <p>Perfectionist PTA queen Annie meets her match in chaotic kindergarten teacher Emberlynn during the holidays.</p>
+                        <a href="#" class="cta-button">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="characters">
+            <div class="container">
+                <h2 class="section-title">Meet the Women of Birchwood Heights</h2>
+                
+                <div class="characters-grid">
+                    <div class="character-card">
+                        <h4>🎃 Lyndi Bailey</h4>
+                        <p class="character-tagline">The sunshine teacher who makes chaos feel like home</p>
+                        <p>Art teacher and foster mom to nephew Micah (13). Holiday decorator, sings off-key, hot-glues everything.</p>
+                        <div class="character-quote">"October isn't complete without glitter."</div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <h4>🔧 Oakley Meadows</h4>
+                        <p class="character-tagline">The grump in work boots who secretly loves midnight pies</p>
+                        <p>Mechanic and single mom to Claudia. Owns too many cardigans, horror novel addict, allergic to gossip.</p>
+                        <div class="character-quote">"I'm not carving a pumpkin. Don't ask."</div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <h4>🍂 Lindsay Hunter</h4>
+                        <p class="character-tagline">The runaway perfectionist learning to rebuild</p>
+                        <p>Shelter mom of twins Emma & Ethan. Fierce protector, stress-cleans, turns canned goods into feasts.</p>
+                        <div class="character-quote">"Fake dating seemed easier than explaining my life."</div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <h4>🦋 Devyn Prescott</h4>
+                        <p class="character-tagline">The prodigal daughter who never thought she'd find love again</p>
+                        <p>Volunteer and widowed "black sheep" returnee. Wry humor, writes unsent letters, takes every thankless job.</p>
+                        <div class="character-quote">"I came back for the kids. I stayed because of you."</div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <h4>🎄 Annie Ames</h4>
+                        <p class="character-tagline">The perfectionist who has to learn love can't be scheduled</p>
+                        <p>PTA queen and recently divorced. Color-coded binders, hums carols when stressed, pageant-obsessed.</p>
+                        <div class="character-quote">"If it's not perfect, it's not happening."</div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <h4>✨ Emberlynn Walters</h4>
+                        <p class="character-tagline">The whirlwind who turns pageants — and Annie's world — upside down</p>
+                        <p>Chaotic kindergarten teacher. Loves glitter bombs, burns cookies, adopts stray cats.</p>
+                        <div class="character-quote">"You don't need perfect. You need real. And real is messy."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <h2>Get Cozy Chapters & Sneak Peeks</h2>
+                <p>Join our newsletter for early chapters, cover reveals, and ARC opportunities. Plus, get updates on new releases and special holiday content!</p>
+                
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Join the Cozy Corner</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Claerie Kavanaugh</h3>
+                    <p>Claerie writes cozy sapphic romances full of found family, small-town charm, and happily ever afters. When not crafting love stories, she can be found collecting vintage teacups and planning elaborate holiday decorations.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#books">All Books</a>
+                    <a href="#characters">Characters</a>
+                    <a href="#newsletter">Newsletter</a>
+                    <a href="#">ARC Reviews</a>
+                    <a href="#">Beta Reading</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" title="Instagram">📸</a>
+                        <a href="#" title="TikTok">🎵</a>
+                        <a href="#" title="Substack">📝</a>
+                        <a href="#" title="Email">📧</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(245, 245, 220, 0.3); padding-top: 1rem; margin-top: 2rem;">
+                <p>&copy; 2024 Claerie Kavanaugh. All rights reserved. | Fall in love with Birchwood Heights</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const carousel = document.getElementById('carousel');
+
+        function showSlide(index) {
+            currentSlide = index;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Thank you for joining our cozy corner! Welcome to the Birchwood Heights family, ${email}!`);
+            this.reset();
+        });
+
+        // Mobile menu toggle (placeholder for future implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            // Toggle mobile menu functionality would go here
+            console.log('Mobile menu clicked');
+        });
+
+        // Add floating animation to seasonal decorations
+        function createFloatingLeaves() {
+            const decorations = ['🍂', '🍁', '🎃'];
+            
+            setInterval(() => {
+                const decoration = document.createElement('div');
+                decoration.className = 'seasonal-decoration leaf';
+                decoration.textContent = decorations[Math.floor(Math.random() * decorations.length)];
+                decoration.style.left = Math.random() * 100 + '%';
+                decoration.style.top = '-50px';
+                decoration.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                
+                document.body.appendChild(decoration);
+                
+                setTimeout(() => {
+                    decoration.remove();
+                }, 8000);
+            }, 3000);
+        }
+
+        // Initialize floating decorations
+        createFloatingLeaves();
+    </script>
+</body>
+</html>
